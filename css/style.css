@@ -1,0 +1,363 @@
+/* ============================================
+   NUTRIFORCE PERÚ — Hoja de estilos principal
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root{
+  /* Paleta */
+  --bg:            #ffffff;
+  --bg-soft:       #f5f6f2;
+  --ink:           #14171a;
+  --ink-soft:      #5b6168;
+  --volt:          #2f6fed;   /* azul eléctrico - acento de marca */
+  --volt-dark:     #1f4fc4;
+  --coal:          #14171a;   /* antes negro puro de la marca, ahora usado solo en acentos */
+  --line:          #e7e8e3;
+  --danger:        #e6425a;
+
+  /* Radios y sombras */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+  --shadow-sm: 0 2px 10px rgba(20,23,26,.06);
+  --shadow-md: 0 10px 24px rgba(20,23,26,.10);
+  --shadow-lg: 0 24px 48px rgba(20,23,26,.16);
+
+  /* Tipografía */
+  --font-display: 'Oswald', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+}
+
+*{box-sizing:border-box;}
+
+html{scroll-behavior:smooth;}
+
+body{
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,h2,h3,h4,.display-font{
+  font-family: var(--font-display);
+  letter-spacing:.5px;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.text-volt{ color: var(--volt-dark); }
+.bg-volt{ background: var(--volt) !important; color: #ffffff !important; }
+.bg-soft{ background: var(--bg-soft) !important; }
+
+a{ color: inherit; }
+
+/* ============ NAVBAR ============ */
+.navbar-brand-mark{
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+.navbar-brand-mark .accent{ color: var(--volt-dark); }
+
+.navbar{
+  background: rgba(255,255,255,.72);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  backdrop-filter: blur(14px) saturate(160%);
+  border-bottom: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+}
+
+/* El navbar ahora es fixed-top (no sticky): compensamos su altura
+   para que el contenido no quede oculto detrás de él */
+body{ padding-top: 84px; }
+@media (max-width: 991.98px){
+  body{ padding-top: 76px; }
+  .navbar-collapse{
+    max-height: calc(100vh - 76px);
+    overflow-y: auto;
+  }
+}
+
+.nav-link{
+  font-weight: 600;
+  font-size: .92rem;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: var(--ink) !important;
+  position: relative;
+  transition: color .25s ease;
+}
+.nav-link.active, .nav-link:hover{ color: #1f4fc4 !important; }
+.nav-link::after{
+  content:"";
+  position:absolute; left:0; bottom:-2px;
+  width:0; height:2px;
+  background: var(--volt-dark);
+  transition: width .25s ease;
+}
+.nav-link:hover::after, .nav-link.active::after{ width:100%; }
+
+/* ============ HERO ============ */
+.hero{
+  position: relative;
+  background: linear-gradient(160deg, var(--bg-soft) 0%, #ffffff 55%, var(--bg-soft) 100%);
+  overflow:hidden;
+  border-bottom: 1px solid var(--line);
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+}
+.hero .eyebrow{
+  display:inline-flex; align-items:center; gap:.5rem;
+  background: var(--ink);
+  color: var(--volt);
+  border-radius: 999px;
+  padding: .35rem .9rem;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.hero h1{
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  line-height: .95;
+}
+.hero .stroke{
+  -webkit-text-stroke: 2px var(--ink);
+  color: transparent;
+}
+.hero-media{
+  position: relative;
+  aspect-ratio: 4/5;
+  border-radius: var(--radius-lg);
+  background: var(--bg-soft);
+  border: 2px dashed #c9cbc3;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow: var(--shadow-lg);
+  overflow:hidden;
+}
+
+/* ============ TICKER (elemento firma) ============ */
+.ticker-wrap{
+  background: var(--ink);
+  color: var(--volt);
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+.ticker{
+  display:inline-block;
+  padding-left: 100%;
+  animation: ticker 22s linear infinite;
+  font-family: var(--font-display);
+  font-size: .95rem;
+  letter-spacing: 2px;
+}
+.ticker span{ margin: 0 1.5rem; }
+@keyframes ticker{
+  0%{ transform: translateX(0); }
+  100%{ transform: translateX(-100%); }
+}
+
+/* ============ IMAGE PLACEHOLDERS (para que el usuario suba sus fotos) ============ */
+.img-slot{
+  position: relative;
+  width:100%;
+  aspect-ratio: var(--ar, 1/1);
+  background: var(--bg-soft);
+  border: 2px dashed #c9cbc3;
+  border-radius: var(--radius-md);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  color: var(--ink-soft);
+  text-align:center;
+  gap:.35rem;
+  transition: border-color .25s ease, transform .25s ease;
+}
+.img-slot i{ font-size: 1.6rem; color:#b9bcb2; }
+.img-slot small{ font-size:.72rem; padding:0 .5rem; }
+.img-slot:hover{ border-color: var(--volt-dark); transform: translateY(-2px); }
+.img-slot.rounded-circle{ border-radius:50%; }
+
+/* ============ IMAGEN REAL (reemplaza el placeholder cuando el archivo existe) ============
+   Coloca tu foto en la carpeta /img con el nombre exacto indicado en el atributo src.
+   Mientras el archivo no exista, el navegador dispara onerror y se sigue viendo el
+   placeholder de arriba; en cuanto subas la imagen con ese nombre, se muestra sola. */
+.real-img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:inherit;
+  display:block;
+}
+
+/* ============ TARJETAS PRODUCTO ============ */
+.card-product{
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow:hidden;
+  transition: transform .3s ease, box-shadow .3s ease;
+  background: #fff;
+}
+.card-product:hover{
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+.card-product .badge-sale{
+  position:absolute; top:.75rem; left:.75rem; z-index:2;
+}
+.price-old{ text-decoration: line-through; color: var(--ink-soft); font-size:.85rem; }
+.price-new{ font-weight:800; font-size:1.15rem; }
+
+/* ============ SECCIONES ============ */
+.section{ padding: 5rem 0; }
+.section-title .kicker{
+  display:block;
+  font-family: var(--font-body);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:.78rem;
+  color:#1f4fc4;
+  margin-bottom:.4rem;
+}
+
+.divider-volt{
+  width:64px; height:5px; background: var(--volt);
+  border-radius:4px; margin: .75rem 0 1.5rem;
+}
+
+/* ============ BOTONES ============ */
+/* Se fuerzan como propiedades explícitas (no shorthand) y con .btn.btn-volt
+   para ganar siempre a las variables internas --bs-btn-* de Bootstrap 5.3 */
+.btn.btn-volt{
+  --bs-btn-bg: #2f6fed;
+  --bs-btn-border-color: #2f6fed;
+  --bs-btn-color: #ffffff;
+  --bs-btn-hover-bg: #1f4fc4;
+  --bs-btn-hover-border-color: #1f4fc4;
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-active-bg: #183f9e;
+  --bs-btn-active-border-color: #183f9e;
+  --bs-btn-active-color: #ffffff;
+  background-color: #2f6fed !important;
+  border: 2px solid #2f6fed !important;
+  color: #ffffff !important;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+.btn.btn-volt:hover, .btn.btn-volt:focus{
+  background-color: #1f4fc4 !important;
+  border-color: #1f4fc4 !important;
+  color: #ffffff !important;
+  box-shadow: var(--shadow-md);
+}
+.btn.btn-outline-coal{
+  --bs-btn-color: #14171a;
+  --bs-btn-border-color: #14171a;
+  --bs-btn-bg: transparent;
+  background-color: transparent !important;
+  border: 2px solid #14171a !important;
+  color: #14171a !important;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  border-radius: var(--radius-sm);
+}
+.btn.btn-outline-coal:hover, .btn.btn-outline-coal:focus{
+  background-color: #14171a !important;
+  border-color: #14171a !important;
+  color: #fff !important;
+}
+
+/* ============ STATS / COUNTERS ============ */
+.stat-num{
+  font-family: var(--font-display);
+  font-size: clamp(2rem,4vw,3.2rem);
+  color: #ffffff;
+}
+.stat-box{ border-left: 3px solid var(--volt); padding-left: 1rem; }
+
+/* ============ EQUIPO (Nosotros) ============ */
+.team-card{
+  text-align:center;
+  padding: 1.5rem 1rem 2rem;
+  border-radius: var(--radius-md);
+  background: #fff;
+  border: 1px solid var(--line);
+  transition: box-shadow .3s ease, transform .3s ease;
+}
+.team-card:hover{ box-shadow: var(--shadow-md); transform: translateY(-4px); }
+.team-card .img-slot{ width:140px; height:140px; margin:0 auto 1rem; --ar:1/1; }
+
+/* ============ GALERÍA ============ */
+.gallery-item{
+  position:relative;
+  border-radius: var(--radius-md);
+  overflow:hidden;
+  cursor:pointer;
+}
+.gallery-item .img-slot{ --ar:1/1; border-radius: var(--radius-md); }
+.gallery-item .gallery-overlay{
+  position:absolute; inset:0;
+  background: linear-gradient(0deg, rgba(20,23,26,.75), rgba(20,23,26,0) 60%);
+  color:#fff;
+  display:flex; align-items:flex-end;
+  padding: 1rem;
+  opacity:0;
+  transition: opacity .3s ease;
+}
+.gallery-item:hover .gallery-overlay{ opacity:1; }
+
+/* ============ FOOTER ============ */
+footer.site-footer{
+  background: var(--ink);
+  color: #cfd2cf;
+}
+footer.site-footer a{ color:#cfd2cf; text-decoration:none; }
+footer.site-footer a:hover{ color: var(--volt); }
+footer .footer-brand{ font-family: var(--font-display); color:#fff; font-size:1.4rem; }
+
+/* ============ UTILIDADES DE ANIMACIÓN ============ */
+.reveal{
+  opacity:0;
+  transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.is-visible{ opacity:1; transform: translateY(0); }
+
+.hover-pop{ transition: transform .25s ease, filter .25s ease; }
+.hover-pop:hover{ transform: scale(1.04); filter: saturate(1.15); }
+
+@keyframes pulseVolt{
+  0%,100%{ box-shadow: 0 0 0 0 rgba(207,255,61,.55); }
+  50%{ box-shadow: 0 0 0 12px rgba(207,255,61,0); }
+}
+.pulse{ animation: pulseVolt 2.2s infinite; }
+
+
+.fade-target{ transition: opacity .4s ease; }
+
+/* Breadcrumb / secciones internas */
+.page-head{
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--line);
+  padding: 3rem 0 2rem;
+}
+
+/* Formulario contacto */
+.form-control:focus, .form-select:focus{
+  border-color: var(--volt-dark);
+  box-shadow: 0 0 0 .2rem rgba(207,255,61,.35);
+}
+
+/* Responsive tweaks */
+@media (max-width: 767.98px){
+  .hero{ clip-path: none; }
+  .section{ padding: 3rem 0; }
+}

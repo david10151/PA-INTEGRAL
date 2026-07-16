@@ -1,0 +1,67 @@
+CÓMO AGREGAR TUS IMÁGENES A NUTRIFORCE PERÚ
+=============================================
+
+El código de las 5 páginas ya está listo para mostrar tus fotos.
+Solo tienes que crear la carpeta "img" (al mismo nivel que index.html,
+css/ y js/) con esta estructura exacta, y subir cada archivo con el
+NOMBRE EXACTO indicado abajo. En cuanto el archivo exista, reemplaza
+automáticamente el placeholder punteado — no hay que tocar el HTML.
+
+Si un archivo no existe todavía, la página sigue funcionando y
+muestra el placeholder de siempre. No rompe nada.
+
+ESTRUCTURA DE CARPETAS
+-----------------------
+img/
+├── hero/
+│   ├── hero-principal.jpg          → index.html, banner principal (1000×1250 px)
+│   ├── campana-creatina.jpg        → index.html, carrusel "Destacados" (1600×600 px)
+│   ├── campana-preentreno.jpg      → index.html, carrusel "Destacados" (1600×600 px)
+│   └── campana-whey.jpg            → index.html, carrusel "Destacados" (1600×600 px)
+│
+├── nosotros/
+│   └── local-equipo.jpg            → nosotros.html, foto del local (1200×525 px)
+│
+├── equipo/
+│   ├── renzo-alvarez.jpg           → nosotros.html, foto de equipo (400×400 px)
+│   ├── camila-torres.jpg           → nosotros.html, foto de equipo (400×400 px)
+│   ├── diego-ramirez.jpg           → nosotros.html, foto de equipo (400×400 px)
+│   └── valeria-ponce.jpg           → nosotros.html, foto de equipo (400×400 px)
+│
+├── galeria/
+│   ├── evento-lanzamiento.jpg      → galeria.html (800×800 px)
+│   ├── creatina-monohidratada.jpg  → galeria.html (800×800 px)
+│   ├── comunidad-nutriforce.jpg    → galeria.html (800×800 px)
+│   ├── pre-entreno-explosivo.jpg   → galeria.html (800×800 px)
+│   ├── feria-fitness-lima.jpg      → galeria.html (800×800 px)
+│   ├── whey-protein-chocolate.jpg  → galeria.html (800×800 px)
+│   ├── equipo-nutriforce.jpg       → galeria.html (800×800 px)
+│   └── local-san-isidro.jpg        → galeria.html (800×800 px)
+│   (estas mismas 8 fotos se usan automáticamente en el lightbox al hacer clic)
+│
+└── productos/
+    ├── creatina-monohidratada.jpg  → productos.html, tarjeta + modal (500×500 px)
+    ├── pre-entreno-explosivo.jpg   → productos.html, tarjeta + modal (500×500 px)
+    ├── whey-protein-chocolate.jpg  → productos.html, tarjeta + modal (500×500 px)
+    └── shaker-nutriforce.jpg       → productos.html, tarjeta + modal (500×500 px)
+
+RECOMENDACIONES
+-----------------------
+- Usa .jpg para fotos y .png si necesitas transparencia (si usas .png,
+  recuerda cambiar la extensión en el HTML también).
+- Respeta las dimensiones sugeridas o una proporción similar para que
+  no se vean recortadas o deformadas (las imágenes se ajustan con
+  object-fit: cover, que recorta los bordes sobrantes).
+- Comprime tus imágenes antes de subirlas (por ejemplo con
+  https://squoosh.app) para que el sitio cargue rápido.
+- Sube esta carpeta "img" completa a tu hosting, en la misma carpeta
+  donde están index.html, css/ y js/.
+
+CÓMO FUNCIONA POR DENTRO (por si quieres tocarlo)
+-----------------------
+Cada placeholder ahora tiene, dentro del mismo bloque, una etiqueta
+<img class="real-img" src="img/..." onerror="this.style.display='none'">.
+Si el navegador no encuentra el archivo, se dispara "onerror" y la
+imagen se oculta, dejando ver el placeholder punteado de siempre.
+Si el archivo sí existe, la imagen se muestra encima y cubre el
+placeholder por completo. No necesitas borrar nada del HTML.

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Productos | NutriForce Perú</title>
+<meta name="description" content="Catálogo de creatina, pre-entreno, proteína whey y accesorios deportivos en Perú.">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+<nav class="navbar navbar-expand-lg fixed-top py-3">
+  <div class="container">
+    <a class="navbar-brand navbar-brand-mark" href="index.html">NUTRI<span class="accent">FORCE</span> <small class="fs-6 fw-normal">PE</small></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link active" href="productos.html">Productos</a></li>
+        <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        <li class="nav-item">
+          <button class="btn btn-sm btn-outline-coal ms-lg-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#filtrosOffcanvas">
+            <i class="bi bi-funnel me-1"></i>Filtros
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
+
+<!-- Offcanvas filtros -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="filtrosOffcanvas">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">Filtrar productos</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <h6>Categoría</h6>
+    <div class="form-check"><input class="form-check-input" type="checkbox" checked id="fc1"><label class="form-check-label" for="fc1">Creatina</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" checked id="fc2"><label class="form-check-label" for="fc2">Pre-Entreno</label></div>
+    <div class="form-check"><input class="form-check-input" type="checkbox" checked id="fc3"><label class="form-check-label" for="fc3">Proteína</label></div>
+    <div class="form-check mb-3"><input class="form-check-input" type="checkbox" id="fc4"><label class="form-check-label" for="fc4">Accesorios</label></div>
+    <h6>Precio máximo (S/)</h6>
+    <input type="range" class="form-range" min="20" max="300" value="180">
+    <button class="btn btn-volt w-100 mt-3">Aplicar filtros</button>
+  </div>
+</div>
+
+<main>
+<div class="page-head">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-2">
+        <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Productos</li>
+      </ol>
+    </nav>
+    <h1 class="display-6 mb-0">Catálogo</h1>
+    <p class="text-secondary">Creatina, pre-entreno, proteína y accesorios</p>
+  </div>
+</div>
+
+<!-- ============ GRID DE PRODUCTOS ============ -->
+<section class="section pt-4">
+  <div class="container">
+
+    <div class="row g-4">
+
+      <!-- Producto 1 -->
+      <div class="col-6 col-md-4 col-lg-3 reveal">
+        <div class="card card-product h-100 position-relative">
+          <span class="badge bg-danger badge-sale">-20%</span>
+          <div class="img-slot" style="--ar:1/1;border-radius:0;">
+            <i class="bi bi-image"></i><small>500×500 px</small>
+            <img class="real-img" src="img/productos/creatina-monohidratada.jpg" alt="Creatina Monohidratada 500g" onerror="this.style.display='none'">
+          </div>
+          <div class="card-body">
+            <span class="badge bg-dark mb-2">Creatina</span>
+            <h6 class="mb-1">Creatina Monohidratada 500g</h6>
+            <div class="mb-1"><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-half text-warning"></i> <small class="text-muted">(214)</small></div>
+            <span class="price-old me-2">S/ 120.00</span><span class="price-new">S/ 96.00</span>
+          </div>
+          <div class="card-footer bg-white border-0 pb-3">
+            <button class="btn btn-volt w-100" data-bs-toggle="modal" data-bs-target="#modalProducto1">Ver detalle</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="col-6 col-md-4 col-lg-3 reveal">
+        <div class="card card-product h-100 position-relative">
+          <span class="badge bg-volt text-dark badge-sale">Nuevo</span>
+          <div class="img-slot" style="--ar:1/1;border-radius:0;">
+            <i class="bi bi-image"></i><small>500×500 px</small>
+            <img class="real-img" src="img/productos/pre-entreno-explosivo.jpg" alt="Pre-Entreno Explosivo 300g" onerror="this.style.display='none'">
+          </div>
+          <div class="card-body">
+            <span class="badge bg-dark mb-2">Pre-Entreno</span>
+            <h6 class="mb-1">Pre-Entreno Explosivo 300g</h6>
+            <div class="mb-1"><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star text-warning"></i> <small class="text-muted">(98)</small></div>
+            <span class="price-new">S/ 135.00</span>
+          </div>
+          <div class="card-footer bg-white border-0 pb-3">
+            <button class="btn btn-volt w-100" data-bs-toggle="modal" data-bs-target="#modalProducto2">Ver detalle</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 3 -->
+      <div class="col-6 col-md-4 col-lg-3 reveal">
+        <div class="card card-product h-100 position-relative">
+          <div class="img-slot" style="--ar:1/1;border-radius:0;">
+            <i class="bi bi-image"></i><small>500×500 px</small>
+            <img class="real-img" src="img/productos/whey-protein-chocolate.jpg" alt="Whey Protein Chocolate 2lb" onerror="this.style.display='none'">
+          </div>
+          <div class="card-body">
+            <span class="badge bg-dark mb-2">Proteína</span>
+            <h6 class="mb-1">Whey Protein Chocolate 2lb</h6>
+            <div class="mb-1"><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i> <small class="text-muted">(340)</small></div>
+            <span class="price-new">S/ 165.00</span>
+          </div>
+          <div class="card-footer bg-white border-0 pb-3">
+            <button class="btn btn-volt w-100" data-bs-toggle="modal" data-bs-target="#modalProducto3">Ver detalle</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 4 -->
+      <div class="col-6 col-md-4 col-lg-3 reveal">
+        <div class="card card-product h-100 position-relative">
+          <div class="img-slot" style="--ar:1/1;border-radius:0;">
+            <i class="bi bi-image"></i><small>500×500 px</small>
+            <img class="real-img" src="img/productos/shaker-nutriforce.jpg" alt="Shaker NutriForce 700ml" onerror="this.style.display='none'">
+          </div>
+          <div class="card-body">
+            <span class="badge bg-dark mb-2">Accesorios</span>
+            <h6 class="mb-1">Shaker NutriForce 700ml</h6>
+            <div class="mb-1"><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i class="bi bi-star text-warning"></i><i class="bi bi-star text-warning"></i> <small class="text-muted">(52)</small></div>
+            <span class="price-new">S/ 25.00</span>
+          </div>
+          <div class="card-footer bg-white border-0 pb-3">
+            <button class="btn btn-outline-coal w-100" data-bs-toggle="modal" data-bs-target="#modalProducto4">Ver detalle</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Paginación -->
+    <nav class="mt-5" aria-label="Paginación de productos">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled"><a class="page-link" href="#">Anterior</a></li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
+      </ul>
+    </nav>
+  </div>
+</section>
+
+<!-- ============ TABLA COMPARATIVA ============ -->
+<section class="section bg-soft">
+  <div class="container">
+    <div class="section-title reveal">
+      <span class="kicker">Comparativa</span>
+      <h2>Elige tu creatina ideal</h2>
+      <div class="divider-volt"></div>
+    </div>
+    <div class="table-responsive reveal">
+      <table class="table table-hover bg-white align-middle rounded-4 overflow-hidden">
+        <thead class="table-dark">
+          <tr>
+            <th>Producto</th>
+            <th>Presentación</th>
+            <th>Porciones</th>
+            <th>Precio</th>
+            <th>Nivel de pureza</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Creatina Monohidratada</td>
+            <td>500 g</td>
+            <td>100</td>
+            <td>S/ 96.00</td>
+            <td>
+              <div class="progress" role="progressbar" style="height:8px;">
+                <div class="progress-bar bg-volt" style="width:95%"></div>
+              </div>
+            </td>
+            <td><span class="badge bg-success">En stock</span></td>
+          </tr>
+          <tr>
+            <td>Creatina HCL</td>
+            <td>250 g</td>
+            <td>83</td>
+            <td>S/ 110.00</td>
+            <td>
+              <div class="progress" role="progressbar" style="height:8px;">
+                <div class="progress-bar bg-volt" style="width:88%"></div>
+              </div>
+            </td>
+            <td><span class="badge bg-success">En stock</span></td>
+          </tr>
+          <tr>
+            <td>Creatina + Electrolitos</td>
+            <td>450 g</td>
+            <td>90</td>
+            <td>S/ 130.00</td>
+            <td>
+              <div class="progress" role="progressbar" style="height:8px;">
+                <div class="progress-bar bg-volt" style="width:80%"></div>
+              </div>
+            </td>
+            <td><span class="badge bg-warning text-dark">Pocas unidades</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ESTADO DE CARGA / SPINNER ============ -->
+<section class="section text-center">
+  <div class="container">
+    <span class="kicker d-block">Sincronizando</span>
+    <div class="d-flex justify-content-center align-items-center gap-3 mt-2">
+      <div class="spinner-border text-volt-dark" style="color:#a3d400;" role="status"></div>
+      <p class="mb-0 text-secondary">Actualizando disponibilidad de stock en tiempo real...</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ MODALES DE PRODUCTO ============ -->
+<div class="modal fade" id="modalProducto1" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content rounded-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Creatina Monohidratada 500g</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body row g-4">
+        <div class="col-md-5">
+          <div class="img-slot" style="--ar:1/1;"><i class="bi bi-image"></i><small>500×500 px</small><img class="real-img" src="img/productos/creatina-monohidratada.jpg" alt="Creatina Monohidratada 500g" onerror="this.style.display='none'"></div>
+        </div>
+        <div class="col-md-7">
+          <p class="text-secondary">Creatina monohidratada micronizada de 100% pureza. Favorece la fuerza y
+          la recuperación muscular durante entrenamientos de alta intensidad.</p>
+          <span class="price-old me-2">S/ 120.00</span><span class="price-new">S/ 96.00</span>
+          <div class="d-flex align-items-center gap-2 mt-3">
+            <input type="number" class="form-control" style="width:80px;" value="1" min="1">
+            <button class="btn btn-volt flex-grow-1">Añadir al carrito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalProducto2" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content rounded-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Pre-Entreno Explosivo 300g</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body row g-4">
+        <div class="col-md-5">
+          <div class="img-slot" style="--ar:1/1;"><i class="bi bi-image"></i><small>500×500 px</small><img class="real-img" src="img/productos/pre-entreno-explosivo.jpg" alt="Pre-Entreno Explosivo 300g" onerror="this.style.display='none'"></div>
+        </div>
+        <div class="col-md-7">
+          <p class="text-secondary">Fórmula con cafeína, beta-alanina y citrulina para energía sostenida y
+          mejor bombeo muscular durante el entrenamiento.</p>
+          <span class="price-new">S/ 135.00</span>
+          <div class="d-flex align-items-center gap-2 mt-3">
+            <input type="number" class="form-control" style="width:80px;" value="1" min="1">
+            <button class="btn btn-volt flex-grow-1">Añadir al carrito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalProducto3" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content rounded-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Whey Protein Chocolate 2lb</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body row g-4">
+        <div class="col-md-5">
+          <div class="img-slot" style="--ar:1/1;"><i class="bi bi-image"></i><small>500×500 px</small><img class="real-img" src="img/productos/whey-protein-chocolate.jpg" alt="Whey Protein Chocolate 2lb" onerror="this.style.display='none'"></div>
+        </div>
+        <div class="col-md-7">
+          <p class="text-secondary">Proteína de suero de leche con 24g de proteína por porción, ideal para
+          la recuperación muscular post-entrenamiento.</p>
+          <span class="price-new">S/ 165.00</span>
+          <div class="d-flex align-items-center gap-2 mt-3">
+            <input type="number" class="form-control" style="width:80px;" value="1" min="1">
+            <button class="btn btn-volt flex-grow-1">Añadir al carrito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalProducto4" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content rounded-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Shaker NutriForce 700ml</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body row g-4">
+        <div class="col-md-5">
+          <div class="img-slot" style="--ar:1/1;"><i class="bi bi-image"></i><small>500×500 px</small><img class="real-img" src="img/productos/shaker-nutriforce.jpg" alt="Shaker NutriForce 700ml" onerror="this.style.display='none'"></div>
+        </div>
+        <div class="col-md-7">
+          <p class="text-secondary">Shaker con malla mezcladora, libre de BPA y capacidad de 700 ml, ideal para
+          batidos de proteína o pre-entreno.</p>
+          <span class="price-new">S/ 25.00</span>
+          <div class="d-flex align-items-center gap-2 mt-3">
+            <input type="number" class="form-control" style="width:80px;" value="1" min="1">
+            <button class="btn btn-outline-coal flex-grow-1">Añadir al carrito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer pt-5 pb-3">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="footer-brand mb-2">NUTRIFORCE PE</div>
+        <p class="small">Suplementación deportiva pensada para el atleta peruano.</p>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6 class="text-white">Navegación</h6>
+        <ul class="list-unstyled small">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-3">
+        <h6 class="text-white">Categorías</h6>
+        <ul class="list-unstyled small">
+          <li><a href="productos.html">Creatina</a></li>
+          <li><a href="productos.html">Pre-Entreno</a></li>
+          <li><a href="productos.html">Proteína Whey</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <h6 class="text-white">Contacto</h6>
+        <ul class="list-unstyled small">
+          <li><i class="bi bi-geo-alt me-2"></i>Av. Javier Prado 123, San Isidro, Lima</li>
+          <li><i class="bi bi-telephone me-2"></i>+51 987 654 321</li>
+        </ul>
+      </div>
+    </div>
+    <hr class="border-secondary mt-4">
+    <p class="small text-center mb-0 text-white-50">© 2026 NutriForce Perú — Proyecto académico.</p>
+  </div>
+</footer>
+
+<button id="backToTop" class="btn btn-volt rounded-circle position-fixed" style="bottom:24px;right:24px;width:48px;height:48px;z-index:1050;">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
