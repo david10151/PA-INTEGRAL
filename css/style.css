@@ -1,22 +1,18 @@
-/* ============================================
-   NUTRIFORCE PERÚ — Hoja de estilos principal
-   ============================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
 
 :root{
-  /* Paleta */
   --bg:            #ffffff;
   --bg-soft:       #f5f6f2;
   --ink:           #14171a;
   --ink-soft:      #5b6168;
-  --volt:          #2f6fed;   /* azul eléctrico - acento de marca */
+  --volt:          #2f6fed;  
   --volt-dark:     #1f4fc4;
-  --coal:          #14171a;   /* antes negro puro de la marca, ahora usado solo en acentos */
+  --coal:          #14171a;   
   --line:          #e7e8e3;
   --danger:        #e6425a;
 
-  /* Radios y sombras */
+
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 28px;
@@ -24,7 +20,6 @@
   --shadow-md: 0 10px 24px rgba(20,23,26,.10);
   --shadow-lg: 0 24px 48px rgba(20,23,26,.16);
 
-  /* Tipografía */
   --font-display: 'Oswald', sans-serif;
   --font-body: 'Manrope', sans-serif;
 }
@@ -53,7 +48,6 @@ h1,h2,h3,h4,.display-font{
 
 a{ color: inherit; }
 
-/* ============ NAVBAR ============ */
 .navbar-brand-mark{
   font-family: var(--font-display);
   font-size: 1.5rem;
@@ -65,12 +59,12 @@ a{ color: inherit; }
   background: rgba(255,255,255,.72);
   -webkit-backdrop-filter: blur(14px) saturate(160%);
   backdrop-filter: blur(14px) saturate(160%);
+
   border-bottom: 1px solid var(--line);
   box-shadow: var(--shadow-sm);
+
 }
 
-/* El navbar ahora es fixed-top (no sticky): compensamos su altura
-   para que el contenido no quede oculto detrás de él */
 body{ padding-top: 84px; }
 @media (max-width: 991.98px){
   body{ padding-top: 76px; }
@@ -99,7 +93,6 @@ body{ padding-top: 84px; }
 }
 .nav-link:hover::after, .nav-link.active::after{ width:100%; }
 
-/* ============ HERO ============ */
 .hero{
   position: relative;
   background: linear-gradient(160deg, var(--bg-soft) 0%, #ffffff 55%, var(--bg-soft) 100%);
@@ -137,7 +130,6 @@ body{ padding-top: 84px; }
   overflow:hidden;
 }
 
-/* ============ TICKER (elemento firma) ============ */
 .ticker-wrap{
   background: var(--ink);
   color: var(--volt);
@@ -160,7 +152,6 @@ body{ padding-top: 84px; }
   100%{ transform: translateX(-100%); }
 }
 
-/* ============ IMAGE PLACEHOLDERS (para que el usuario suba sus fotos) ============ */
 .img-slot{
   position: relative;
   width:100%;
@@ -179,10 +170,6 @@ body{ padding-top: 84px; }
 .img-slot:hover{ border-color: var(--volt-dark); transform: translateY(-2px); }
 .img-slot.rounded-circle{ border-radius:50%; }
 
-/* ============ IMAGEN REAL (reemplaza el placeholder cuando el archivo existe) ============
-   Coloca tu foto en la carpeta /img con el nombre exacto indicado en el atributo src.
-   Mientras el archivo no exista, el navegador dispara onerror y se sigue viendo el
-   placeholder de arriba; en cuanto subas la imagen con ese nombre, se muestra sola. */
 .real-img{
   position:absolute;
   inset:0;
@@ -193,7 +180,6 @@ body{ padding-top: 84px; }
   display:block;
 }
 
-/* ============ TARJETAS PRODUCTO ============ */
 .card-product{
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
@@ -211,14 +197,15 @@ body{ padding-top: 84px; }
 .price-old{ text-decoration: line-through; color: var(--ink-soft); font-size:.85rem; }
 .price-new{ font-weight:800; font-size:1.15rem; }
 
-/* ============ SECCIONES ============ */
 .section{ padding: 5rem 0; }
 .section-title .kicker{
   display:block;
   font-family: var(--font-body);
   font-weight:700;
+
   text-transform:uppercase;
   letter-spacing:2px;
+
   font-size:.78rem;
   color:#1f4fc4;
   margin-bottom:.4rem;
@@ -227,24 +214,27 @@ body{ padding-top: 84px; }
 .divider-volt{
   width:64px; height:5px; background: var(--volt);
   border-radius:4px; margin: .75rem 0 1.5rem;
+
 }
 
-/* ============ BOTONES ============ */
-/* Se fuerzan como propiedades explícitas (no shorthand) y con .btn.btn-volt
-   para ganar siempre a las variables internas --bs-btn-* de Bootstrap 5.3 */
 .btn.btn-volt{
   --bs-btn-bg: #2f6fed;
   --bs-btn-border-color: #2f6fed;
   --bs-btn-color: #ffffff;
+
   --bs-btn-hover-bg: #1f4fc4;
   --bs-btn-hover-border-color: #1f4fc4;
   --bs-btn-hover-color: #ffffff;
+
+
   --bs-btn-active-bg: #183f9e;
   --bs-btn-active-border-color: #183f9e;
+
   --bs-btn-active-color: #ffffff;
   background-color: #2f6fed !important;
   border: 2px solid #2f6fed !important;
   color: #ffffff !important;
+
   font-weight:700;
   text-transform:uppercase;
   letter-spacing:.5px;
@@ -254,6 +244,7 @@ body{ padding-top: 84px; }
 .btn.btn-volt:hover, .btn.btn-volt:focus{
   background-color: #1f4fc4 !important;
   border-color: #1f4fc4 !important;
+
   color: #ffffff !important;
   box-shadow: var(--shadow-md);
 }
@@ -275,7 +266,6 @@ body{ padding-top: 84px; }
   color: #fff !important;
 }
 
-/* ============ STATS / COUNTERS ============ */
 .stat-num{
   font-family: var(--font-display);
   font-size: clamp(2rem,4vw,3.2rem);
@@ -283,7 +273,6 @@ body{ padding-top: 84px; }
 }
 .stat-box{ border-left: 3px solid var(--volt); padding-left: 1rem; }
 
-/* ============ EQUIPO (Nosotros) ============ */
 .team-card{
   text-align:center;
   padding: 1.5rem 1rem 2rem;
@@ -295,7 +284,6 @@ body{ padding-top: 84px; }
 .team-card:hover{ box-shadow: var(--shadow-md); transform: translateY(-4px); }
 .team-card .img-slot{ width:140px; height:140px; margin:0 auto 1rem; --ar:1/1; }
 
-/* ============ GALERÍA ============ */
 .gallery-item{
   position:relative;
   border-radius: var(--radius-md);
@@ -307,31 +295,33 @@ body{ padding-top: 84px; }
   position:absolute; inset:0;
   background: linear-gradient(0deg, rgba(20,23,26,.75), rgba(20,23,26,0) 60%);
   color:#fff;
+
   display:flex; align-items:flex-end;
   padding: 1rem;
+  
   opacity:0;
   transition: opacity .3s ease;
 }
 .gallery-item:hover .gallery-overlay{ opacity:1; }
 
-/* ============ FOOTER ============ */
 footer.site-footer{
   background: var(--ink);
   color: #cfd2cf;
 }
 footer.site-footer a{ color:#cfd2cf; text-decoration:none; }
 footer.site-footer a:hover{ color: var(--volt); }
+
 footer .footer-brand{ font-family: var(--font-display); color:#fff; font-size:1.4rem; }
 
-/* ============ UTILIDADES DE ANIMACIÓN ============ */
 .reveal{
   opacity:0;
   transform: translateY(24px);
-  transition: opacity .7s ease, transform .7s ease;
+  transition: opacity .35s ease-out, transform .35s ease-out;
 }
 .reveal.is-visible{ opacity:1; transform: translateY(0); }
 
 .hover-pop{ transition: transform .25s ease, filter .25s ease; }
+
 .hover-pop:hover{ transform: scale(1.04); filter: saturate(1.15); }
 
 @keyframes pulseVolt{
@@ -341,22 +331,20 @@ footer .footer-brand{ font-family: var(--font-display); color:#fff; font-size:1.
 .pulse{ animation: pulseVolt 2.2s infinite; }
 
 
+
 .fade-target{ transition: opacity .4s ease; }
 
-/* Breadcrumb / secciones internas */
 .page-head{
   background: var(--bg-soft);
   border-bottom: 1px solid var(--line);
   padding: 3rem 0 2rem;
 }
 
-/* Formulario contacto */
 .form-control:focus, .form-select:focus{
   border-color: var(--volt-dark);
   box-shadow: 0 0 0 .2rem rgba(207,255,61,.35);
 }
 
-/* Responsive tweaks */
 @media (max-width: 767.98px){
   .hero{ clip-path: none; }
   .section{ padding: 3rem 0; }

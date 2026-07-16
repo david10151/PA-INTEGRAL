@@ -1,23 +1,16 @@
-/* ============================================
-   NUTRIFORCE PERÚ — script principal
-   jQuery + Bootstrap 5 + vanilla JS
-   ============================================ */
 
 $(function () {
 
-  /* ---------- Inicializar tooltips y popovers de Bootstrap ---------- */
   const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
   [...tooltipTriggerList].map(el => new bootstrap.Tooltip(el));
 
   const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
   [...popoverTriggerList].map(el => new bootstrap.Popover(el));
 
-  /* ---------- Navbar: sombra al hacer scroll ---------- */
   $(window).on('scroll', function () {
     $('.navbar').toggleClass('shadow', $(window).scrollTop() > 10);
   });
 
-  /* ---------- Efecto Fade + Slide con jQuery: revelar al hacer scroll ---------- */
   function revealOnScroll() {
     $('.reveal').each(function () {
       const top = $(this).offset().top;
@@ -28,9 +21,9 @@ $(function () {
     });
   }
   $(window).on('scroll resize', revealOnScroll);
+  
   revealOnScroll();
 
-  /* ---------- Contador animado (plugin "Counter" con jQuery) ---------- */
   $('.counter').each(function () {
     const $this = $(this);
     const target = parseInt($this.data('target'), 10) || 0;
@@ -42,12 +35,10 @@ $(function () {
     });
   });
 
-  /* ---------- Slide toggle para el buscador (efecto "Slide") ---------- */
   $('#toggleSearch').on('click', function () {
     $('#searchBox').slideToggle(250);
   });
 
-  /* ---------- Mini-lightbox de galería (efecto "Lightbox" con jQuery) ---------- */
   $('.gallery-item').on('click', function () {
     const title = $(this).data('title') || 'Imagen';
     const imgSrc = $(this).data('img') || '';
@@ -62,7 +53,6 @@ $(function () {
     modal.show();
   });
 
-  /* ---------- Toast de confirmación al enviar el formulario ---------- */
   $('#contactForm').on('submit', function (e) {
     e.preventDefault();
     if (!this.checkValidity()) {
@@ -78,7 +68,6 @@ $(function () {
     $(this).removeClass('was-validated');
   });
 
-  /* ---------- Validación Bootstrap genérica para otros formularios ---------- */
   document.querySelectorAll('.needs-validation').forEach(form => {
     form.addEventListener('submit', event => {
       if (!form.checkValidity()) {
@@ -89,7 +78,6 @@ $(function () {
     }, false);
   });
 
-  /* ---------- Botón "volver arriba" ---------- */
   $('#backToTop').on('click', function () {
     $('html, body').animate({ scrollTop: 0 }, 400);
   });
